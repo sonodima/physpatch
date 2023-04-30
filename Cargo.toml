@@ -1,0 +1,15 @@
+[package]
+name = "physpatch"
+author = "sonodima"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.2.4", features = [ "derive" ] }
+memflow = "0.2.0-beta10"
+memflow-qemu = "0.2.0-beta10"
+memflow-win32 = "0.2.0-beta10"
+x86 = "0.52.0"
+aobscan = "0.3.0"
+hex = "0.4.3"
+colored = "2.0.0"
