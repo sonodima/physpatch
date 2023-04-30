@@ -2,8 +2,8 @@ use std::error::Error;
 use std::ops::Add;
 use std::result::Result;
 
+use ::x86::current::paging::{PDFlags, PDPTFlags, PD, PDPT, PML4, PT};
 use aobscan::Pattern;
-use x86::current::paging::{PDFlags, PDPTFlags, PD, PDPT, PML4, PT};
 
 use memflow::prelude::*;
 use memflow_win32::prelude::*;
