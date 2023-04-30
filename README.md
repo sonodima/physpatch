@@ -1,9 +1,6 @@
 <h1 align="center">PhysPatch 🩹</h1>
 
 <div align="center">
-  <a href="https://github.com/sonodima/physpatch/releases/latest">
-    <img src="https://img.shields.io/github/v/release/sonodima/physpatch?color=pink&label=latest"/>
-  </a>
   <a href="https://github.com/sonodima/physpatch/actions?workflow=CI">
     <img src="https://github.com/sonodima/physpatch/workflows/CI/badge.svg"/>
   </a>
