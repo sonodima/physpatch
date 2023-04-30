@@ -10,7 +10,7 @@ homepage = "https://github.com/sonodima/physpatch"
 repository = "https://github.com/sonodima/physpatch"
 license = "MIT"
 
-keywords = ["memory", "dma", "memflow", "scan", "patch", "windows", "kernel"]
+keywords = ["memory", "memflow", "patch", "windows", "kernel"]
 categories = ["command-line-utilities", "virtualization"]
 
 
