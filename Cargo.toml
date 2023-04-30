@@ -1,8 +1,18 @@
 [package]
 name = "physpatch"
-author = "sonodima"
 version = "0.1.0"
+authors = ["sonodima"]
 edition = "2021"
+
+description = "PhysPatch performs physical memory scanning and patching of the entire Windows Kernel using DMA"
+readme = "README.md"
+homepage = "https://github.com/sonodima/physpatch"
+repository = "https://github.com/sonodima/physpatch"
+license = "MIT"
+
+keywords = ["memory", "dma", "memflow", "scan", "patch", "windows", "kernel"]
+categories = ["command-line-utilities", "virtualization"]
+
 
 [dependencies]
 clap = { version = "4.2.4", features = [ "derive" ] }
