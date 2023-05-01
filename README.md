@@ -12,8 +12,8 @@
 > PhysPatch performs physical memory scanning and patching of the entire Windows
 > Kernel using DMA.
 > 
-> PhysPatch uses [memflow](https://github.com/memflow/memflow) to access memory
-> of the virtual machine, and [AOBscan](https://github.com/sonodima/aobscan)
+> [memflow](https://github.com/memflow/memflow) is used to access the virtual
+> machine's physical memory, and [AOBscan](https://github.com/sonodima/aobscan)
 > to perform the multi-threaded memory scanning.
 
 ## Usage
@@ -62,6 +62,8 @@ The compiled binary will be located at `target/release/physpatch`
 ## Other Information
 
 PhysPatch comes with the [memflow_qemu](https://github.com/memflow/memflow-qemu) and [memflow_win32](https://github.com/memflow/memflow-win32) libraries embedded, so you will not need any setup in your host machine to use it.
+
+__CAP_SYS_PTRACE__ may be required to use this program without root privileges. For more information, refer to [memflow_qemu](https://github.com/memflow/memflow-qemu)'s documentation.
 
 ### ⚠️ THIS TOOL ONLY SUPPORTS AMD64 GUEST SYSTEMS
 
