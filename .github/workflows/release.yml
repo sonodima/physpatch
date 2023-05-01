@@ -1,0 +1,78 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+env:
+  CARGO_TERM_COLOR: always
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      BUILD_NAME: physpatch
+      TARGET: x86_64-unknown-linux-gnu
+      OS: linux
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Cache Cargo
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: cargo-ci
+
+      - name: Install Rust Toolchain
+        run: rustup target add $TARGET
+
+      - name: Build
+        run: cargo build --release --verbose --target $TARGET
+
+      - name: Package
+        run: |
+          mkdir -p artifacts
+          mv target/$TARGET/release/$BUILD_NAME artifacts/$BUILD_NAME
+
+          # Package the executable into an archive named with the build target.
+          tar -czf artifacts/$BUILD_NAME-$TARGET.tar.gz -C artifacts $BUILD_NAME
+
+          # Delete the executable from the artifacts folder, as it is no longer needed.
+          rm artifacts/$BUILD_NAME
+
+      - name: Upload Release Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: result
+          path: artifacts
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: result
+          path: artifacts
+
+      - name: Print Artifacts
+        run: ls -l artifacts
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: artifacts/*
+
+      - name: Delete Release Artifacts
+        uses: geekyeggo/delete-artifact@v2
+        with:
+          name: result
