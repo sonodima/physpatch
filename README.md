@@ -1,10 +1,16 @@
 <h1 align="center">PhysPatch 🩹</h1>
 
 <div align="center">
+  <a href="https://crates.io/crates/physpatch">
+    <img src="https://img.shields.io/crates/v/physpatch.svg"/>
+  </a>
   <a href="https://github.com/sonodima/physpatch/actions?workflow=CI">
     <img src="https://github.com/sonodima/physpatch/workflows/CI/badge.svg"/>
   </a>
   <img src="https://img.shields.io/badge/license-MIT-blue.svg"/>
+  <a href="https://crates.io/crates/physpatch">
+    <img src="https://img.shields.io/crates/d/physpatch?color=pink"/>
+  </a>
 </div>
 
 <br>
