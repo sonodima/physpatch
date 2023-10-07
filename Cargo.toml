@@ -1,10 +1,10 @@
 [package]
 name = "physpatch"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["sonodima"]
 edition = "2021"
 
-description = "PhysPatch performs physical memory scanning and patching of the entire Windows Kernel using DMA"
+description = "PhysPatch performs physical memory scans and patches of the entire Windows kernel"
 readme = "README.md"
 homepage = "https://github.com/sonodima/physpatch"
 repository = "https://github.com/sonodima/physpatch"
@@ -15,11 +15,15 @@ categories = ["command-line-utilities", "virtualization"]
 
 
 [dependencies]
-clap = { version = "4.2.4", features = [ "derive" ] }
+clap = { version = "4.4.6", features = ["derive"] }
+anyhow = "1.0.75"
+x86 = "0.52.0"
 memflow = "0.2.0-beta10"
 memflow-qemu = "0.2.0-beta10"
 memflow-win32 = "0.2.0-beta10"
-x86 = "0.52.0"
 aobscan = "0.3.0"
 hex = "0.4.3"
-colored = "2.0.0"
+
+
+[profile.dev.package.aobscan]
+opt-level = 3
