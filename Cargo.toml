@@ -1,6 +1,6 @@
 [package]
 name = "physpatch"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["sonodima"]
 edition = "2021"
 
