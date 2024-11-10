@@ -33,7 +33,7 @@ where
     }
 
     pub fn scan(&mut self) -> Result<Vec<Range>> {
-        let pml4: PML4 = unsafe { self.kernel.phys_read_unchecked(self.ntoskrnl.dtb) }
+        let pml4: PML4 = unsafe { self.kernel.phys_read_unchecked(self.ntoskrnl.base_info.dtb1) }
             .context("failed to read the system's page map")?;
 
         let mut pageset = HashSet::new();
